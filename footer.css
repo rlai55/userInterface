@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 footer {
     background-color: #3c3b3b;
     padding: 3em 4em 2em;
@@ -10,8 +16,8 @@ footer {
     }
 
     footer .row {
-        margin: 2em 0;
-        padding-bottom: 2em;
+        margin: 1.5em 0;
+        padding-bottom: 1.5em;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color: #fff;
         position: relative;
@@ -85,11 +91,11 @@ footer {
 
 @media (max-width: 390px) {
     footer {
-        padding: 2em 1em 1em;
+        padding: 0.5em 1em 1em;
     }
 
     footer .logo {
-        font-size: 28px;
+        display: none;
     }
 
     footer .row {

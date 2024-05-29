@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoo's</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="homepage-main.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-    <head>
-        <nav>
-            <img src="image/logo.png" alt="logo">
-            <ul class="homepage-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Categories</a></li>
-                <li><a href="/">Brand</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Contact</a></li>
-                <li><a href="/">Menu</a></li>
-            </ul>
-        </nav>
-
-    </head>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="menu-icon">
+                <img src="image/menu-icon.png" alt="Menu">
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><img src="image/search-icon.png" alt="Search"></a>
+                <a href="#"><img src="image/account-icon.png" alt="Account"></a>
+                <a href="#" class="cart-icon"><img src="image/cart-icon.png" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
     <main>
-
+        <section class="banner">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover amazing content and services.</p>
+        </section>
+        <section>
+            <h1>Content Goes Here</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </section>
     </main>
     <footer>
         <div>
