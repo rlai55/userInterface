@@ -24,6 +24,7 @@ footer {
 
     .link-cat {
         font-size: 1.5em;
+        margin-bottom: 0.5em;
         cursor:pointer;
     }
     
@@ -81,3 +82,37 @@ footer {
         color:#fff;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
+
+@media (max-width: 390px) {
+    footer {
+        padding: 2em 1em 1em;
+    }
+
+    footer .logo {
+        font-size: 28px;
+    }
+
+    footer .row {
+        margin: 1em 0;
+        padding-bottom: 1em;
+        font-size: 0.9em;
+    }
+
+    .link-cat {
+        font-size: 1.2em;
+    }
+
+    .col-4 {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .footer-cat-links a {
+        font-size: 0.9em;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+    }
+}
