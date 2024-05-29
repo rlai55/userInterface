@@ -1,19 +1,68 @@
 .banner {
     height: 75vh;
-    background-color: #dcd9e0;
+    background-color: #dff8da;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2em;
+    margin-top: -100px;
 }
 
-.banner h1 {
-    font-size: 2.5em;
+.banner-content {
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.banner-text {
+    flex: 1;
+    text-align: left;
+}
+
+.banner-text h1 {
+    font-family: 'Jaro', sans-serif;
+    font-size: 6em;
+    margin-bottom: 0.2em;
+}
+
+.banner-text h2 {
+    color: #ff0000;
+    font-family: 'Reddit Mono', sans-serif;
+    font-size: 3em;
     margin-bottom: 0.5em;
 }
 
-.banner p {
+.banner-text p {
     font-size: 1.2em;
+    margin-bottom: 1em;
+    max-width: 540px;
+}
+
+.banner-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 0.75em 4.5em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner-button:hover {
+    background-color: #064b06;
+}
+
+.banner-image {
+    flex: 1;
+    text-align: right;
+}
+
+.banner-image img {
+    margin-top: 2em;
+    max-width: 100%;
+    height: auto;
 }

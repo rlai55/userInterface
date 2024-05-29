@@ -48,18 +48,18 @@ footer {
             line-height: 2;            
         }  
 
-        .footer-cat-links a {
+        .footer-cat--links a {
             color: #cecece;
             font-size: 1em;
             text-decoration: none;
             position: relative;
         }
 
-        .footer-cat-links.active > li a {
+        .footer-cat--links.active > li a {
             pointer-events: auto;
         }
 
-        .footer-cat-links a:after {
+        .footer-cat--links a:after {
             top: 20px;
             content: "";
             display: block;
@@ -73,7 +73,7 @@ footer {
             transition: width 0.3s ease 0s, left 0.3s ease 0s;
         }
 
-        .footer-cat-links a:hover:after, .footer-cat-links a:focus:after {
+        .footer-cat--links a:hover:after, .footer-cat--links a:focus:after {
             width: 100%;
             left: 0;
         }

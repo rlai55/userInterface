@@ -19,7 +19,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.699);
 }
 
 .navbar-container {
@@ -39,6 +39,7 @@ body {
 }
 
 .nav-links {
+    font-family: 'kanit', sans-serif;
     display: flex;
     justify-content: center;
     flex-grow: 1;
