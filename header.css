@@ -134,6 +134,11 @@ body {
     gap: 4em;
 }
 
+.search-header--logo img {
+    height: 60px;
+    width: auto;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -152,14 +157,14 @@ body {
 .search-bar--button button { 
     background-color: transparent;
     border: none;
-    font-size: 1em;
+    font-size: 1.5em;
     cursor: pointer;
     color: #000;
     margin-right: 1em;
 }
 
 .search-bar--button button img {
-    width: 20px;
+    width: 24px;
     height: auto;
 }
 
@@ -246,5 +251,23 @@ body {
 
     .nav-icons a {
         margin-left: 0.8em;
+    }
+
+    .search-header--logo {
+        display: none;
+    }
+
+    .popular-search--terms {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .search-bar--button button { 
+        font-size: 1.1em;
+    }
+    
+    .search-bar--button button img {
+        width: 20px;
+        height: auto;
     }
 }
