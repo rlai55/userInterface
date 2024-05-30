@@ -6,11 +6,15 @@ function footerToggle(footerBtn) {
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    } else {
+        console.warn('Navbar element not found.');
+    }
 });
