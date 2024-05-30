@@ -1,19 +1,17 @@
 /* Banner */
 
 .banner {
-    height: 85vh;
+    height: 80vh;
     background-color: #e8f0eb;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2em;
-    margin-top: -100px;
     border-bottom: 1px solid #000000;
 }
 
 .banner-content {
-    margin-top: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
