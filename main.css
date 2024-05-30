@@ -1,6 +1,6 @@
 .banner {
-    height: 75vh;
-    background-color: #dff8da;
+    height: 85vh;
+    background-color: #e8f0eb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,8 @@
 }
 
 .banner-button:hover {
-    background-color: #064b06;
+    background-color: #ffc400;
+    color: #000;
 }
 
 .banner-image {
@@ -81,7 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3em; 
+    margin: 2em 0 4em;
 }
 
 .section-title h2 {
@@ -98,21 +99,23 @@
     background-color: #000;
 }
 
-.products {
+.best-sellers--product {
     display: flex;
     justify-content: space-between;
+    padding: 0 3em; /* 增加左右内边距，使产品卡片远离边缘 */
+    gap: 3em;
 }
 
 .product-card {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
-    border-radius: 8px;
     overflow: hidden;
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
 }
 
 .product-card--image {
@@ -130,7 +133,7 @@
 }
 
 .product-card--details {
-    padding: 1em;
+    padding: 0.2em 1em 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -151,7 +154,9 @@
 
 
 .product-card--name {
-    font-size: 1.5em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
     margin: 0.5em 0;
     width: 100%;
     display: -webkit-box;
@@ -159,17 +164,27 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.2em;
 }
 
 .product-card--price {
+    font-family: 'Reddit Mono', sans-serif;
     font-size: 2em;
-    font-weight: 300;
-    color: #333;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+    margin-top: 0.2em;
+}
+.product-card--priceSpecial {
+    font-family: 'Reddit Mono', sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    color: #ff0000;
     text-align: left;
     margin-top: 0.2em;
 }
 
-.product-card--status {
+.product-card--statusIn {
     display: flex;
     align-items: center;
     font-size: 1em;
@@ -178,10 +193,44 @@
     margin-top: 0.2em;
 }
 
-.status-indicator {
+.status-indicatorIn {
     width: 10px;
     height: 10px;
     background-color: #28a745;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.product-card--statusLow {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: orangered;
+    text-align: left;
+    margin-top: 0.2em;
+}
+
+.status-indicatorLow {
+    width: 10px;
+    height: 10px;
+    background-color: orangered;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.product-card--statusOut {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: gray;
+    text-align: left;
+    margin-top: 0.2em;
+}
+
+.status-indicatorOut {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
     border-radius: 50%;
     margin-right: 0.5em;
 }
@@ -194,11 +243,20 @@
     font-size: 1.5em;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: 4px;
-    text-align: right; 
-    align-self: flex-end; 
+    width: 100%;
+}
+
+.product-card--buttonOut {
+    background-color: #696969;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
 .product-card--button:hover {
-    background-color: #333;
+    background-color: #ffc400;
+    color: #000;
 }
