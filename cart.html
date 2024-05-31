@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoo's</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="cart-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jaro:opsz@6..72&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="menu-icon">
+                <img src="image/menu-icon.png" alt="Menu">
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="logo"></a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><img src="image/search-icon.png" alt="Search"></a>
+                <a href="#"><img src="image/account-icon.png" alt="Account"></a>
+                <a href="cart.html" class="cart-icon"><img src="image/cart-icon.png" alt="Cart"></a>
+            </div>
+        </div>
+        <div id="search-modal" class="search-modal">
+            <div class="search-modal--content">
+                <div class="search-header">
+                    <div class="search-header--logo">
+                        <img src="image/logo.png" alt="logo">
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <div class="search-bar--button">
+                            <button href="product-list.html" id="search-button"><img src="image/search-icon.png" alt="Search"></button>
+                            <button id="cancel-button">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-search--terms">
+                    <p>Popular Search Terms</p>
+                    <ul>
+                        <li>Xbox</li>
+                        <li>Playstation 5</li>
+                        <li>Mario</li>
+                        <li>COD</li>
+                        <li>Minecraft</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="cart">
+            <div class="cart-container">
+                <div class="cart-section">
+                    <h2>Cart</h2>
+                    <p>There are no items in your cart.</p>
+                </div>
+                <div class="summary-section">
+                    <h2>Summary</h2>
+                    <p>Total</p>
+                    <button class="checkout-button">Checkout</button>
+                </div>
+            </div>
+        </section>
+        <section class="might-like">
+            <div class="section-title">
+                <div class="line"></div>
+                <h2>Might Also Like</h2>
+                <div class="line"></div>
+            </div>
+            <div class="best-sellers--product">
+                <div class="product-card">
+                    <div class="product-card--image">
+                        <img src="image/product-image1.png" alt="Product Image">
+                    </div>
+                    <div class="product-card--details">
+                        <div class="product-card--top">
+                            <h3 class="product-card--name">The LEGO Movie Videogame (Xbox One)</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card--image">
+                        <img src="image/product-image2.png" alt="Product Image">
+                    </div>
+                    <div class="product-card--details">
+                        <div class="product-card--top">
+                            <h3 class="product-card--name">Call of Duty: Modern Warfare 2 - PlayStation 4</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card--image">
+                        <img src="image/product-image3.jpg" alt="Product Image">
+                    </div>
+                    <div class="product-card--details">
+                        <div class="product-card--top">
+                            <h3 class="product-card--name">Call of Duty: Modern Warfare 2 - PlayStation 4</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slogan">
+            <p>"Every game is yours with Yoo's"</p>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <span class="logo">Yoo's</span>
+        </div>
+ 
+        <div class="row">
+            <div class="col-4">                
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Company</span>
+                </div>
+                <ul class="footer-cat--links">
+                    <li><a href="/"><span>About us</span></a></li>
+                    <li><a href="/"><span>Location & Hours</span></a></li>
+                    <li><a href="/"><span>Articles</span></a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Information</span>
+                </div>
+                <ul class="footer-cat--links">
+                    <li><a href="/"><span>Dilivery & Pickup</span></a></li>
+                    <li><a href="/"><span>Terms & Conditions</span></a></li>
+                    <li><a href="/"><span>Return & Warranty</span></a></li>
+                    <li><a href="/"><span>Payment Method</span></a></li>
+                    <li><a href="/"><span>Sitemap</span></a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Customer</span>
+                </div>
+                <ul class="footer-cat--links">
+                    <li><a href="/"><span>My Account</span></a></li>
+                    <li><a href="/"><span>Order History</span></a></li>
+                    <li><a href="/"><span>Watch List</span></a></li>
+                    <li><a href="/"><span>Warranty Claim</span></a></li>
+                </ul>
+            </div>
+            <div class="col-4"> 
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Shop Location</span>
+                </div>
+                <ul class="footer-cat--links">
+                    <li><a href="/"><span>C12/2A Westall Road, Springvale VIC 3171</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; All Rights Reserved 2018-2023. Yoo's Technology. ABN #55 639 387 385. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

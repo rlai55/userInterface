@@ -1,8 +1,7 @@
 /* Banner */
-
 .banner {
     height: 80vh;
-    background-color: #e8f0eb;
+    background-color: #e8f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,6 +395,68 @@
     font-family: 'Caveat', cursive;
     color: #000000;
 }
+
+
+/* Cart */
+
+.cart {
+    height: 80vh;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 10em 4em;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.cart-container h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.cart-container p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.checkout-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 1.2em 10em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+}
+
+.checkout-button:hover {
+    background-color: #ffc400;
+    color: #000;
+}
+
+.cart-section {
+    
+}
+
+
+
+.might-like {
+    padding: 2em 2em 2em;
+    text-align: center;
+}
+
+
 
 /* Banner media */
 @media (max-width: 390px) {
