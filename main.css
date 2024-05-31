@@ -180,6 +180,10 @@
     transition: color 0.3s;
 }
 
+.product-card--name:hover {
+    text-decoration: underline;
+}
+
 .product-card--price {
     font-family: 'Reddit Mono', sans-serif;
     font-size: 2em;
@@ -445,18 +449,136 @@
     color: #000;
 }
 
-.cart-section {
-    
-}
-
-
-
 .might-like {
     padding: 2em 2em 2em;
     text-align: center;
 }
 
+/* Product List Page */
 
+.product-list-container {
+    display: flex;
+    padding: 4em 2em;
+}
+
+.search-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em 0.5em;
+    margin-top: 8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    font-size: 3em;
+    margin: 0;
+}
+
+.search-result h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: #6d6d6d;
+    font-size: 1em;
+    margin: 0 0 0.5em 0;
+}
+
+.sort-button {
+    padding: 0.5em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 1em;
+    margin-right: 2em;
+}
+
+.sort-button span {
+    margin-left: 0.5em;
+}
+
+.sidebar {
+    width: 20%;
+    margin-right: 2em;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 80%;
+}
+
+.product-card {
+    width: 48%;
+    margin-bottom: 1em;
+}
+
+.filter-group {
+    padding: 1em 0;
+    border-top: 1px solid #ddd;
+}
+
+.filter-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    padding: 0.5em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-title .arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.filter-title.expanded .arrow {
+    transform: rotate(180deg);
+}
+
+.filter-options {
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+}
+
+.filter-options label {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+}
+
+.filter-options input {
+    margin-right: 0.5em;
+}
+
+.filter-options.expanded {
+    max-height: 200px; 
+}
+
+.product-card--link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
 
 /* Banner media */
 @media (max-width: 390px) {

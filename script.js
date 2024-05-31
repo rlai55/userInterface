@@ -48,3 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterTitles = document.querySelectorAll('.filter-title');
+
+    filterTitles.forEach(title => {
+        title.addEventListener('click', function() {
+            const filterOptions = this.nextElementSibling;
+            this.classList.toggle('expanded');
+            if (filterOptions.classList.contains('expanded')) {
+                filterOptions.classList.remove('expanded');
+                filterOptions.style.maxHeight = null;
+            } else {
+                filterOptions.classList.add('expanded');
+                filterOptions.style.maxHeight = filterOptions.scrollHeight + 'px';
+            }
+        });
+    });
+});
