@@ -419,6 +419,8 @@
     max-width: 1200px;
 }
 
+
+
 .cart-container h2 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 3em;
@@ -489,8 +491,9 @@
     margin: 0 0 0.5em 0;
 }
 
+.filter-button, 
 .sort-button {
-    padding: 0.5em;
+    padding: 0 1em 0 0;
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
     background: none;
@@ -501,9 +504,9 @@
     justify-content: center;
     position: relative;
     top: 1em;
-    margin-right: 2em;
 }
 
+.filter-button span,
 .sort-button span {
     margin-left: 0.5em;
 }
@@ -578,6 +581,10 @@
     display: block;
     color: inherit;
     text-decoration: none;
+}
+
+.filter-button {
+    display: none;
 }
 
 /* Banner media */
@@ -690,5 +697,72 @@
     .slogan {
         font-size: 0.4em;
         margin: 4em 5em;
+    }
+
+
+    /* Product list media */
+    .product-list-container {
+        padding: 2em 0.5em;
+    }
+
+    .search-result {
+        margin-top: 5em;
+    }
+
+    .search-result h3 {
+        font-size: 0.5em;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .product-list {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .product-list .product-card {
+        flex: 1 1 calc(50% - 0.6em);
+        margin-bottom: 0.5em;
+        margin-right: 0;
+    }
+    
+    .product-list .product-card h3{
+        font-size: 1em;
+    }
+
+    .product-list .product-card p{
+        font-size: 0.8em;
+    }
+
+    .product-list .product-card .product-card--priceSpecial {
+        font-size: 1em;
+    }
+
+    .product-list .product-card .product-card--price {
+        font-size: 1em;
+    }
+
+    .filter-button {
+        display: flex;
+    }
+
+    .search-controls {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        gap: 0.5em;
+    }
+
+    .filter-button,
+    .sort-button {
+        font-size: 0.8em;
+    }
+
+    .filter-button .arrow,
+    .sort-button .arrow {
+        margin-left: 0.5em;
     }
 }
