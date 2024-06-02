@@ -272,3 +272,45 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'checkout.html';
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const confirmPaymentButton = document.getElementById('confirm-button');
+    const paymentModal = document.getElementById('payment-modal');
+    const closeButton = document.querySelector('.close-button');
+
+    // Function to clear cart and redirect to cart page
+    function clearCart() {
+        localStorage.removeItem('cart');
+        window.location.href = 'cart.html';
+    }
+
+    // Function to show payment modal
+    function showPaymentModal() {
+        paymentModal.style.display = 'flex';
+    }
+
+    // Event listener for confirm payment button
+    if (confirmPaymentButton) {
+        confirmPaymentButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            showPaymentModal();
+        });
+    }
+
+    // Event listener for close button
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            paymentModal.style.display = 'none';
+            clearCart();
+        });
+    }
+
+    // Close the modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target == paymentModal) {
+            paymentModal.style.display = 'none';
+            clearCart();
+        }
+    });
+});
