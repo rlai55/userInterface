@@ -66,3 +66,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.querySelector('.main-image');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function () {
+            // 移除所有缩略图的选中状态
+            thumbnails.forEach(thumb => thumb.classList.remove('selected'));
+
+            // 添加选中状态到当前缩略图
+            this.classList.add('selected');
+
+            // 更新主图像
+            mainImage.src = this.src;
+        });
+    });
+});

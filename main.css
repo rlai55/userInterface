@@ -587,6 +587,134 @@
     display: none;
 }
 
+/* Product Page */
+.product-page-container {
+    max-width: 1200px;
+    margin: 8em auto;
+    background-color: #fff;
+}
+
+.back-to-list {
+    margin-bottom: 1em;
+}
+
+.back-to-list a {
+    text-decoration: none;
+    color: #000;
+}
+
+.product-page {
+    display: flex;
+    gap: 2em;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.thumbnail.selected {
+    border: 2px solid #888888;
+}
+
+.main-image-container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #888888;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 100%;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+}
+
+.product-description {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.product-features {
+    margin: 1em 0;
+}
+
+.product-price-status {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1em;
+}
+
+.product-price {
+    font-size: 2em;
+    color: #000;
+}
+
+.product-statusIn {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: green;
+}
+
+.status-indicatorIn {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.product-details .product-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0.75em 3em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.product-details .product-button:hover{
+    background-color: #ffbb00;
+    color: #000000;
+}
+
+.product-features-section {
+    margin-top: 2em;
+}
+
+.product-features-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+
 /* Banner media */
 @media (max-width: 390px) {
     .banner {
