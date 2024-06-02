@@ -416,10 +416,37 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
 }
 
+.cart-section {
+    flex: 1;
+}
 
+.cart-item {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1em;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: auto;
+    margin-right: 1em;
+}
+
+.cart-item-details {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
 
 .cart-container h2 {
     font-family: 'Chakra Petch', sans-serif;
@@ -434,6 +461,74 @@
     font-weight: 600;
     margin-bottom: 1em;
 }
+
+.cart-item-price-quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item-price {
+    font-size: 1.2em;
+    margin-right: 1em;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    background-color: #ddd;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.quantity-controls span {
+    margin: 0 0.5em;
+}
+
+.delete-item {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-left: auto;
+    right: 0;
+}
+
+.delete-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.summary-section {
+    text-align: left;
+    width: 30%;
+}
+
+.summary-section span {
+    font-family: 'Reddit Mono', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.total-price {
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+}
+
 
 .checkout-button {
     background-color: #000000;
