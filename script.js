@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         if (cart.length === 0) {
-            cartSection.innerHTML = '<p>There are no items in your cart.</p>';
+            cartSection.innerHTML = '<p class="noitems">There are no items in your cart.</p>';
             totalElement.innerText = '$0.00';
         } else {
             cartSection.innerHTML = '';
@@ -269,18 +269,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (confirmButton) {
         confirmButton.addEventListener('click', function () {
             localStorage.removeItem('cart');
-            window.location.href = 'cart-page.html';
+            window.location.href = 'cart.html';
         });
     }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const checkoutButton = document.getElementById('confirm-button');
+    const checkoutButton = document.getElementById('checkout-button');
 
     checkoutButton.addEventListener('click', function() {
         window.location.href = 'checkout.html';
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
