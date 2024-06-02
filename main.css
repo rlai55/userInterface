@@ -1265,4 +1265,31 @@
         font-size: 1em;
         margin-bottom: 0.5em;
     }
+
+
+    /* checkout */
+    .checkout{
+        margin-top: 6em;
+        padding-bottom: 2em;
+    }
+
+    .checkout-container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .checkout-section {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    .summary-section {
+        order: -1;
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid #ddd;
+        padding-left: 0;
+        align-items: flex-start;
+        padding-bottom: 2em;
+    }
 }
