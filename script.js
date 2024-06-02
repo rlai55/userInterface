@@ -228,3 +228,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const cartSection = document.querySelector('.cart-items');
+    const totalElement = document.querySelector('.total-price');
+
+    function loadCartItems() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            cartSection.innerHTML = '<p>There are no items in your cart.</p>';
+            totalElement.innerText = '$0.00';
+        } else {
+            cartSection.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p>$${item.price.toFixed(2)}</p>
+                        <span>X ${item.quantity}</span>
+                    </div>
+                `;
+                cartSection.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+
+            totalElement.innerText = `$${total.toFixed(2)}`;
+        }
+    }
+
+    loadCartItems();
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function() {
+        window.location.href = 'checkout.html';
+    });
+});

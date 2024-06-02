@@ -858,6 +858,95 @@
     margin: 0.5em 0 0.5em;
 }
 
+/* Checkout Page Styles */
+.checkout {
+    padding: 0 2em 4em;
+    margin-top: 8em;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 100%;
+}
+
+.checkout-section {
+    width: 55%;
+}
+
+.summary-section {
+    width: 42%;
+    border-left: 1px solid #ddd;
+    padding-left: 2em;
+}
+
+.checkout-section h2,
+.summary-section h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.address-form h3,
+.card-info-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.checkout-section span {
+    color: #ff0000;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.form-row label {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.card-info-form img {
+    width: 100px;
+    height: auto;
+}
+
+.total-section {
+    width: 80%;
+    margin-top: 2em;
+    text-align: right;
+}
+
+.total-section div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.total-section p {
+    font-size: 1em;
+    color: #555;
+    text-align: right;
+}
+
+.cart-item-details span {
+    margin-top: 0.5em;
+    font-size: 1em;
+}
+
 /* Banner media */
 @media (max-width: 390px) {
     .banner {
