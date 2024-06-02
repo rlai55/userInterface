@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         if (cart.length === 0) {
-            checkoutItemsSection.innerHTML = '<p>There are no items in your cart.</p>';
+            checkoutItemsSection.innerHTML = '<p class="noitems">There are no items in your cart.</p>';
             totalElement.innerText = '$0.00';
         } else {
             checkoutItemsSection.innerHTML = '';
@@ -246,14 +246,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'checkout-item';
                 itemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" class="checkout-item--image">
-                <div class="checkout-item--details">
-                    <h3 class="checkout-item--name">${item.name}</h3>
-                    <div class="checkout-item-price-quantity">
-                        <p class="checkout-item--price">$${item.price.toFixed(2)}</p>
-                        <span class="checkout-item--quantity">X ${item.quantity}</span>
+                    <img src="${item.image}" alt="${item.name}" class="checkout-item--image">
+                    <div class="checkout-item--details">
+                        <h3 class="checkout-item--name">${item.name}</h3>
+                        <div class="checkout-item-price-quantity">
+                            <p class="checkout-item--price">$${item.price.toFixed(2)}</p>
+                            <span class="checkout-item--quantity">X ${item.quantity}</span>
+                        </div>
                     </div>
-                </div>
                 `;
                 checkoutItemsSection.appendChild(itemElement);
                 total += item.price * item.quantity;
@@ -264,10 +264,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     loadCheckoutItems();
+
+    const confirmButton = document.getElementById('confirm-button');
+    if (confirmButton) {
+        confirmButton.addEventListener('click', function () {
+            localStorage.removeItem('cart');
+            window.location.href = 'cart-page.html';
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const checkoutButton = document.getElementById('checkout-button');
+    const checkoutButton = document.getElementById('confirm-button');
 
     checkoutButton.addEventListener('click', function() {
         window.location.href = 'checkout.html';
