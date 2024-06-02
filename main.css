@@ -6,7 +6,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2em;
     border-bottom: 1px solid #000000;
 }
 
@@ -23,20 +22,20 @@
     text-align: left;
 }
 
-.banner-text h1 {
+.banner-title {
     font-family: 'Jaro', sans-serif;
     font-size: 6em;
     margin-bottom: 0.2em;
 }
 
-.banner-text h2 {
+.banner-price {
     color: #ff0000;
     font-family: 'Reddit Mono', sans-serif;
     font-size: 3em;
     margin-bottom: 0.5em;
 }
 
-.banner-text p {
+.banner-info {
     color: #6d6d6d;
     font-size: 1.2em;
     margin-bottom: 1em;
@@ -80,14 +79,14 @@
     text-align: center;
 }
 
-.section-title {
+.section-start {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 2em 0 4em;
 }
 
-.section-title h2 {
+.section-text {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 400;
     margin: 0 1em;
@@ -173,6 +172,7 @@
     width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    -moz-box-orient:vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -305,14 +305,6 @@
     margin: 2em 0 4em;
 }
 
-.section-title h2 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: 400;
-    margin: 0 1em;
-    font-size: 3em;
-    text-align: center;
-}
-
 .line {
     flex: 1;
     height: 1px;
@@ -370,17 +362,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #000000;
     background: rgba(0, 0, 0, 0.5);
     transition: background 0.3s, opacity 0.3s;
 }
 
-.category-card--overlay h3 {
+.category-name {
     color: #fff;
     font-size: 2.2em;
     font-family: 'Poetsen One', sans-serif;
 }
 
 .category-card:hover .category-card--overlay {
+    background: #555;
     background: rgba(0, 0, 0, 0);
     opacity: 0;
 }
@@ -431,31 +425,37 @@
     padding-bottom: 1em;
 }
 
-.cart-item-image {
+.cart-item--image {
     width: 80px;
     height: auto;
     margin-right: 1em;
 }
 
-.cart-item-details {
+.cart-item--details {
     width: 80%;
     display: flex;
     flex-direction: column;
 }
 
-.cart-item-details h3 {
+.item-details {
     font-size: 1.5em;
     margin-bottom: 0.5em;
 }
 
-.cart-container h2 {
+.item-price {
+    font-family: 'Reddit Mono', sans-serif;
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+
+.second-title {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 3em;
     font-weight: 400;
     margin-bottom: 1em;
 }
 
-.cart-container p {
+.noitems {
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
     font-weight: 600;
@@ -469,12 +469,7 @@
     width: 100%;
 }
 
-.item-price {
-    font-size: 1.2em;
-    margin-right: 1em;
-}
-
-.cart-item-controls {
+.cart-item--controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -482,6 +477,7 @@
 }
 
 .quantity-controls {
+    margin-top: 0.5em;
     display: flex;
     align-items: center;
 }
@@ -572,14 +568,14 @@
     flex-direction: column;
 }
 
-.search-result h2 {
+.search-text {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 600;
     font-size: 3em;
     margin: 0;
 }
 
-.search-result h3 {
+.search-title {
     font-family: 'Chakra Petch', sans-serif;
     color: #6d6d6d;
     font-size: 1em;
@@ -835,15 +831,15 @@
     padding: 2em;
 }
 
-.product-features h1 {
+.features-title {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
-    margin-bottom: 1em;
+    margin: 0.5em 0 0.5em;
 }
 
-.product-features h3 {
+.features-text {
     font-family: 'Lato', sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #2e2e2e;
 }
 
@@ -852,10 +848,6 @@
     width: 100%;
     height: 600px;
     border: none;
-}
-
-.features-playable h1 {
-    margin: 0.5em 0 0.5em;
 }
 
 /* Checkout Page Styles */
@@ -875,27 +867,106 @@
     width: 55%;
 }
 
-.summary-section {
+.checkout-summary--section {
     width: 42%;
     border-left: 1px solid #ddd;
     padding-left: 2em;
 }
 
-.checkout-section h2,
-.summary-section h2 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 1em;
+.checkout-items {
+    margin-bottom: 2em;
 }
 
-.address-form h3,
-.card-info-form h3 {
+.checkout-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1em;
+}
+
+.checkout-item--image {
+    width: 140px;
+    height: auto;
+    margin-right: 1em;
+}
+
+.checkout-item--details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 1em 0 1em;
+}
+
+.checkout-item--price {
+    font-family: 'Reddit Mono', sans-serif;
+    font-size: 1.5em;
+}
+
+.checkout-item--quantity {
+    font-size: 1.5em;
+}
+
+.checkout-item--name {
     font-size: 1.5em;
     margin-bottom: 0.5em;
 }
 
-.checkout-section span {
-    color: #ff0000;
+.checkout-total--section {
+    width: 100%;
+    margin-top: 2em;
+    text-align: right;
+}
+
+.checkout-total--section div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.checkout-total--section p {
+    font-size: 1em;
+    color: #555;
+    text-align: right;
+}
+
+.checkout-item-price-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+}
+
+.confirm-button {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 1.2em 10em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+}
+
+.confirm-button:hover {
+    background-color: #ffc400;
+    color: #000;
+}
+
+.address-form, .card-info-form {
+    margin-bottom: 2em;
+}
+
+.third-title {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
 }
 
 .form-row {
@@ -918,49 +989,8 @@
     border-radius: 4px;
 }
 
-.card-info-form img {
-    width: 100px;
-    height: auto;
-}
-
-.total-section {
-    width: 80%;
-    margin-top: 2em;
-    text-align: right;
-}
-
-.total-section div {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.total-section p {
-    font-size: 1em;
-    color: #555;
-    text-align: right;
-}
-
-.cart-item-details span {
-    margin-top: 0.5em;
-    font-size: 1em;
-}
-
-.confirm-button {
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    padding: 1.2em 10em;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 1em;
-}
-
-.confirm-button:hover {
-    background-color: #ffc400;
-    color: #000;
+.checkout-section span {
+    color: #ff0000;
 }
 
 /* Payment Complete */
@@ -973,6 +1003,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    background-color: #000;
     background-color: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: center;
@@ -993,14 +1024,14 @@
     height: 50px;
 }
 
-.payment-modal--content h2 {
+.payment-modal--success {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2em;
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
-.payment-modal--content p {
+.payment-modal--info {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     padding: 0.5em 0;
@@ -1042,17 +1073,17 @@
         padding: 0 1em 1em;
     }
 
-    .banner-text h1 {
+    .banner-title {
         font-size: 4em;
         margin-bottom: 0.5em;
     }
 
-    .banner-text h2 {
+    .banner-price {
         font-size: 2em;
         margin-bottom: 0.5em;
     }
 
-    .banner-text p {
+    .banner-info {
         font-size: 1em;
         margin-bottom: 1em;
         max-width: 100%;
@@ -1076,7 +1107,7 @@
 
     /* Banner media */
 
-    .section-title {
+    .section-start {
         font-size: 0.6em;
         margin: 1em 0 2em;
     }
@@ -1144,7 +1175,7 @@
         margin-top: 5em;
     }
 
-    .search-result h3 {
+    .search-title {
         font-size: 0.5em;
     }
 
@@ -1163,20 +1194,28 @@
         margin-right: 0;
     }
     
-    .product-list .product-card h3{
+    .product-card--name{
         font-size: 1em;
     }
 
-    .product-list .product-card p{
+    .product-card--priceSpecial {
+        font-size: 1em;
+    }
+
+    .product-card--price {
+        font-size: 1em;
+    }
+
+    .product-card--statusLow {
         font-size: 0.8em;
     }
 
-    .product-list .product-card .product-card--priceSpecial {
-        font-size: 1em;
+    .product-card--statusIn {
+        font-size: 0.8em;
     }
 
-    .product-list .product-card .product-card--price {
-        font-size: 1em;
+    .product-card--statusOut {
+        font-size: 0.8em;
     }
 
     .filter-button {
@@ -1261,7 +1300,7 @@
         padding: 1em;
     }
     
-    .product-features h1 {
+    .features-title {
         font-family: 'Lato', sans-serif;
         font-size: 1.5em;
         margin-bottom: 0.5em;
@@ -1273,7 +1312,7 @@
         border: none;
     }
     
-    .features-playable h1 {
+    .features-text {
         margin: 0.5em 0 0.5em;
     }
 
@@ -1329,19 +1368,29 @@
         text-align: right;
     }
 
-    .cart-container h2 {
+    .second-title {
         font-family: 'Chakra Petch', sans-serif;
         font-size: 2em;
         font-weight: 400;
     }
 
-    .cart-item-details h3 {
+    .item-details {
         font-size: 1em;
         margin-bottom: 0.5em;
     }
 
+    .item-price {
+        font-family: 'Reddit Mono', sans-serif;
+        font-size: 1em;
+    }
+    
+    .quantity {
+        font-size: 1em;
+    }
+
 
     /* checkout */
+
     .checkout{
         margin-top: 6em;
         padding-bottom: 2em;
@@ -1352,19 +1401,30 @@
         padding: 0;
     }
 
+    .checkout-item--name {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .checkout-item--image {
+        width: 80px;
+        height: auto;
+        margin-right: 0.5em;
+    }
+
     .checkout-section {
         width: 100%;
         margin-bottom: 2em;
     }
 
-    .summary-section {
+    .checkout-summary--section {
         order: -1;
         width: 100%;
         border-left: none;
-        border-bottom: 1px solid #ddd;
         padding-left: 0;
         align-items: flex-start;
         padding-bottom: 2em;
+        margin-bottom: 2em;
     }
 
     .confirm-button {

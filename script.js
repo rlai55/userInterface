@@ -122,11 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'cart-item';
                 itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3>${item.name}</h3>
+                    <img src="${item.image}" alt="${item.name}" class="cart-item--image">
+                    <div class="cart-item--details">
+                        <h3 class="item-details">${item.name}</h3>
                         <p class="item-price">$${item.price.toFixed(2)}</p>
-                        <div class="cart-item-controls">
+                        <div class="cart-item--controls">
                             <div class="quantity-controls">
                                 <button class="quantity-decrease" data-index="${index}">-</button>
                                 <span class="quantity">${item.quantity}</span>
@@ -229,31 +229,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const cartSection = document.querySelector('.cart-items');
+    const checkoutItemsSection = document.querySelector('.checkout-items');
     const totalElement = document.querySelector('.total-price');
 
-    function loadCartItems() {
+    function loadCheckoutItems() {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         if (cart.length === 0) {
-            cartSection.innerHTML = '<p>There are no items in your cart.</p>';
+            checkoutItemsSection.innerHTML = '<p>There are no items in your cart.</p>';
             totalElement.innerText = '$0.00';
         } else {
-            cartSection.innerHTML = '';
+            checkoutItemsSection.innerHTML = '';
             let total = 0;
 
             cart.forEach((item, index) => {
                 const itemElement = document.createElement('div');
-                itemElement.className = 'cart-item';
+                itemElement.className = 'checkout-item';
                 itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3>${item.name}</h3>
-                        <p>$${item.price.toFixed(2)}</p>
-                        <span>X ${item.quantity}</span>
+                <img src="${item.image}" alt="${item.name}" class="checkout-item--image">
+                <div class="checkout-item--details">
+                    <h3 class="checkout-item--name">${item.name}</h3>
+                    <div class="checkout-item-price-quantity">
+                        <p class="checkout-item--price">$${item.price.toFixed(2)}</p>
+                        <span class="checkout-item--quantity">X ${item.quantity}</span>
                     </div>
+                </div>
                 `;
-                cartSection.appendChild(itemElement);
+                checkoutItemsSection.appendChild(itemElement);
                 total += item.price * item.quantity;
             });
 
@@ -261,9 +263,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    loadCartItems();
+    loadCheckoutItems();
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const checkoutButton = document.getElementById('checkout-button');
