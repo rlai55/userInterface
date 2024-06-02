@@ -1,30 +1,11 @@
-function footerToggle(footerBtn) {
-    $(footerBtn).toggleClass("btnActive");
-    $(footerBtn).next().toggleClass("active");
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
-
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }, { passive: true });
-    } else {
-        console.warn('Navbar element not found.');
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const searchIconLink = document.querySelector('.nav-icons a img[alt="Search"]').parentElement;
     const searchModal = document.getElementById('search-modal');
     const cancelButton = document.getElementById('cancel-button');
+    const cartNotification = document.getElementById('cart-notification');
+    const viewCartButton = cartNotification.querySelector('.view-cart-button');
 
-    searchIconLink.addEventListener('click', function(event) {
+    searchIconLink.addEventListener('click', function (event) {
         event.preventDefault();
         searchModal.style.display = 'flex';
         setTimeout(() => {
@@ -32,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 10);
     });
 
-    cancelButton.addEventListener('click', function() {
+    cancelButton.addEventListener('click', function () {
         searchModal.classList.remove('show');
         setTimeout(() => {
             searchModal.style.display = 'none';
         }, 500);
     });
 
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (event.target == searchModal) {
             searchModal.classList.remove('show');
             setTimeout(() => {
@@ -47,44 +28,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const filterTitles = document.querySelectorAll('.filter-title');
+    function showCartNotification(product) {
+        const notificationImage = cartNotification.querySelector('img');
+        const notificationName = cartNotification.querySelector('.cart-notification-name');
+        const notificationPrice = cartNotification.querySelector('.cart-notification-price');
 
-    filterTitles.forEach(title => {
-        title.addEventListener('click', function() {
-            const filterOptions = this.nextElementSibling;
-            this.classList.toggle('expanded');
-            if (filterOptions.classList.contains('expanded')) {
-                filterOptions.classList.remove('expanded');
-                filterOptions.style.maxHeight = null;
-            } else {
-                filterOptions.classList.add('expanded');
-                filterOptions.style.maxHeight = filterOptions.scrollHeight + 'px';
-            }
-        });
+        notificationImage.src = product.image;
+        notificationName.innerText = product.name;
+        notificationPrice.innerText = `$${product.price.toFixed(2)}`;
+
+        cartNotification.style.display = 'flex';
+        setTimeout(() => {
+            cartNotification.classList.add('show');
+        }, 10);
+        setTimeout(() => {
+            cartNotification.classList.remove('show');
+            setTimeout(() => {
+                cartNotification.style.display = 'none';
+            }, 500);
+        }, 3000);
+    }
+
+    viewCartButton.addEventListener('click', function () {
+        window.location.href = 'cart.html';
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    const mainImage = document.querySelector('.main-image');
-
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-            thumbnails.forEach(thumb => thumb.classList.remove('selected'));
-
-            this.classList.add('selected');
-
-            mainImage.src = this.src;
-        });
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
     const addToCartButton = document.querySelector('.product-button');
     const productCards = document.querySelectorAll('.product-card--button');
     const cartSection = document.querySelector('.cart-items');
@@ -101,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
+        showCartNotification(product);
     }
 
-    // Add to Cart from product page
     if (addToCartButton) {
         addToCartButton.addEventListener('click', function () {
             const productName = document.querySelector('.product-name').innerText;
@@ -121,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Add to Cart from product cards
     productCards.forEach(button => {
         button.addEventListener('click', function () {
             const productCard = this.closest('.product-card');
@@ -140,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Cart page functionality
     if (cartSection) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -206,3 +173,58 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+function footerToggle(footerBtn) {
+    $(footerBtn).toggleClass("btnActive");
+    $(footerBtn).next().toggleClass("active");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('.navbar');
+
+    if (navbar) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    } else {
+        console.warn('Navbar element not found.');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterTitles = document.querySelectorAll('.filter-title');
+
+    filterTitles.forEach(title => {
+        title.addEventListener('click', function () {
+            const filterOptions = this.nextElementSibling;
+            this.classList.toggle('expanded');
+            if (filterOptions.classList.contains('expanded')) {
+                filterOptions.classList.remove('expanded');
+                filterOptions.style.maxHeight = null;
+            } else {
+                filterOptions.classList.add('expanded');
+                filterOptions.style.maxHeight = filterOptions.scrollHeight + 'px';
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.querySelector('.main-image');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function () {
+            thumbnails.forEach(thumb => thumb.classList.remove('selected'));
+
+            this.classList.add('selected');
+
+            mainImage.src = this.src;
+        });
+    });
+});
+

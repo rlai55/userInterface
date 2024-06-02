@@ -768,16 +768,19 @@
 }
 
 .product-price {
+    font-family: 'Reddit Mono', sans-serif;
     display: flex;
     align-items: flex-end;
 }
 
 .product-price--special {
+    font-family: 'Reddit Mono', sans-serif;
     font-size: 2em;
     color: #ff0000;
 }
 
 .product-price--was {
+    font-family: 'Reddit Mono', sans-serif;
     font-size: 1em;
     color: #6d6d6d;
     text-decoration: line-through;
@@ -1053,7 +1056,10 @@
         flex-direction: row;
         gap: 0.5em;
     }
-    
+    .product-price--special {
+        margin-top: 0.5em;
+    }
+
     .thumbnail {
         width: 60px;
         height: 60px;
@@ -1109,7 +1115,7 @@
     }
 
     .product-info {
-        margin-bottom: 0.4em;
+        display: none;
     }
 
     .product-details .product-button {
@@ -1120,6 +1126,54 @@
         padding: 1em 0;
         text-align: center;
         font-size: 1.2em;
-        z-index: 1000; /* 确保按钮在页面上方 */
+        z-index: 1000;
+    }
+
+    /* cart */
+    .cart {
+        height: auto;
+        padding: 5em 2em 1em;
+    }
+
+    .cart-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-section, .summary-section {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    .checkout-button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1em 0;
+        font-size: 1.2em;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .cart-item {
+        width: 100%;
+    }
+
+    .total-price {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+    }
+
+    .cart-container h2 {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cart-item-details h3 {
+        font-size: 1em;
+        margin-bottom: 0.5em;
     }
 }

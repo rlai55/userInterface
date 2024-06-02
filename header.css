@@ -95,6 +95,9 @@ body {
     height: auto;
 }
 
+
+/* Search */
+
 .search-modal {
     display: none;
     position: fixed;
@@ -207,6 +210,69 @@ body {
     text-decoration: underline;
 }
 
+/* Notification */
+.cart-notification {
+    display: none;
+    position: fixed;
+    top: 6em;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translateY(-100%);
+    opacity: 0;
+    width: 500px;
+}
+
+.cart-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cart-notification img {
+    width: auto;
+    height: 100px;
+    margin-right: 1em;
+}
+
+.cart-notification-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-notification-name {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.cart-notification-price {
+    font-family: 'Reddit Mono', sans-serif;;
+    font-size: 1em;
+    color: #000000;
+}
+
+.view-cart-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 0.5em;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.view-cart-button:hover {
+    background-color: #ffc400;
+    color: #000;
+}
+
 @media (max-width: 390px) {
     .navbar-container {
         justify-content: space-between;
@@ -270,5 +336,10 @@ body {
     .search-bar--button a img {
         width: 20px;
         height: auto;
+    }
+
+    .cart-notification {
+        width: 390px;
+        top: 0;
     }
 }
