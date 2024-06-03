@@ -264,14 +264,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     loadCheckoutItems();
-
-    const confirmButton = document.getElementById('confirm-button');
-    if (confirmButton) {
-        confirmButton.addEventListener('click', function () {
-            localStorage.removeItem('cart');
-            window.location.href = 'cart.html';
-        });
-    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -285,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const confirmPaymentButton = document.getElementById('confirm-button');
+    const confirmButton = document.getElementById('confirm-button');
     const paymentModal = document.getElementById('payment-modal');
     const closeButton = document.querySelector('.close-button');
 
@@ -301,8 +293,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener for confirm payment button
-    if (confirmPaymentButton) {
-        confirmPaymentButton.addEventListener('click', function(event) {
+    if (confirmButton) {
+        confirmButton.addEventListener('click', function(event) {
             event.preventDefault();
             showPaymentModal();
         });
